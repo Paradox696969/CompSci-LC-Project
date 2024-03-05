@@ -8,13 +8,13 @@ with open("modelPredictions.json") as f:
 with open("inputData.json") as f:
     inputData = json.load(f)
 
-types = ["BPM", "Concentration", "Exercise", "Gaming", "Happiness", "Sleep", "Stress", "Tiredness"]
+types = ["BPM", "Gaming", "Concentration", "Sleep", "Exercise", "Tiredness", "Stress", "Happiness"]
 for model_type in types:
     try:
         mkdir(f"Graphs\\{model_type}")
     except:
         pass
-    temp_types = ["BPM", "Concentration", "Exercise", "Gaming", "Happiness", "Sleep", "Stress", "Tiredness"]
+    temp_types = ["BPM", "Gaming", "Concentration", "Sleep", "Exercise", "Tiredness", "Stress", "Happiness"]
     temp_types.remove(model_type)
     for category in temp_types:
         y = data[f"{model_type}-{category}"]

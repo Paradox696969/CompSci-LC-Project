@@ -6,9 +6,9 @@ with open("modelPredictions.json") as f:
 derivativeData = {}
 iterations = 16000
 dx = [10/iterations, (0.5*160)/iterations]
-types = ["BPM", "Concentration", "Exercise", "Gaming", "Happiness", "Sleep", "Stress", "Tiredness"]
+types =  ["BPM", "Gaming", "Concentration", "Sleep", "Exercise", "Tiredness", "Stress", "Happiness"]
 for model_type in types:
-    temp_types = ["BPM", "Concentration", "Exercise", "Gaming", "Happiness", "Sleep", "Stress", "Tiredness"]
+    temp_types =  ["BPM", "Gaming", "Concentration", "Sleep", "Exercise", "Tiredness", "Stress", "Happiness"]
     temp_types.remove(model_type)
     for category in temp_types:
         data = []

@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy
 import json
-import itertools
 
 df = pd.read_csv("CollectedData.csv")
 cols = list(dict(df).keys())
