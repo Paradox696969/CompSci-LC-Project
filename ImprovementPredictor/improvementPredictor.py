@@ -35,5 +35,6 @@ def compareImprovement():
     diff = improved - initial
     print(f"Initial prediction: {round(initial, 3)}\nFinal prediction: {round(improved, 3)}\nEffect: {round(diff, 3)}")
 
-compareImprovement()
+if __name__ == "__main__":
+    compareImprovement()
     
