@@ -114,10 +114,10 @@ display.scroll(str(categories))
 goals = [0, 0]
 improvementable = ["BPM", "Gaming", "Concentration", "Sleep", "Exercise", "Tiredness", "Stress", "Happiness"]
 
+bA = button_a.was_pressed()
+bB = button_b.was_pressed()
+bAB = bA and bB
 while not send_data:
-    bA = button_a.was_pressed()
-    bB = button_b.was_pressed()
-    bAB = bA and bB
 
     if not bAB:
         if bA:
@@ -128,21 +128,27 @@ while not send_data:
         send_data = not send_data
     
     if state == 0 or state == 1:
-        display.scroll(str(improvementable[int(categories[state])]) + " Goal: " + str(goals[state]), 90)
+        display.scroll(str(improvementable[int(categories[state])]) + " Goal: " + str(goals[state]), 65)
         if goals[state] > 0:
-            display.scroll("Goal Completed; Great Job!!!", 90)
+            display.scroll("Goal Completed; Great Job!!!", 55)
         else:
-            display.scroll("You have yet to complete your goal.", 75)
+            display.scroll("You need to finish your goal.", 55)
 
         if bB:
             goals[state] += 1
             
             
     if state == 2:
-        display.scroll(random.choice(messages), 100)
-        sleep(10000)
+        display.scroll(random.choice(messages), 75)
+        sleep(5000)
+
+    
+    bA = button_a.was_pressed()
+    bB = button_b.was_pressed()
+    bAB = bA and bB
 
 send_string = str(goals[0])+ ";" + str(goals[1])
 while send_data:
     print(send_string.encode('UTF-8'))
+    sleep(1000)
     
